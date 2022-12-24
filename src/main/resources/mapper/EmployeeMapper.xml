@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.siyu.zsymes.mapper.EmployeeMapper">
+
+    <resultMap id="BaseResultMap" type="com.siyu.zsymes.entity.Employee">
+            <id property="userid" column="userid" jdbcType="VARCHAR"/>
+            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="sex" column="sex" jdbcType="VARCHAR"/>
+            <result property="address" column="address" jdbcType="VARCHAR"/>
+            <result property="tell" column="tell" jdbcType="VARCHAR"/>
+            <result property="idcard" column="idcard" jdbcType="VARCHAR"/>
+            <result property="createtime" column="createtime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        userid,username,password,
+        sex,address,tell,
+        idcard,createtime
+    </sql>
+</mapper>
