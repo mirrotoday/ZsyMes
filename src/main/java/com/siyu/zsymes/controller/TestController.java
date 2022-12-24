@@ -1,5 +1,6 @@
 package com.siyu.zsymes.controller;
 
+import com.siyu.zsymes.config.redis.RedisRepository;
 import com.siyu.zsymes.service.TestService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -17,11 +18,15 @@ public class TestController {
 
     @Resource
     TestService testService;
+    @Resource
+    RedisRepository  redisRepository;
 
     @GetMapping(value = "/validate")
     @ApiOperation(value = "登录")
     public String Login(){
-        System.out.println("====================进入登录");
+        redisRepository.set("user","ceshi");
+        String key = redisRepository.get("user");
+        System.out.println("====================进入登录"+key);
         return "登录";
 
     }
